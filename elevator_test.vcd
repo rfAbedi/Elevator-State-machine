@@ -1,0 +1,820 @@
+$date
+	Sat Jan 21 01:49:30 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module elevator_test $end
+$var wire 1 ! Open $end
+$var wire 3 " DISP [2:0] $end
+$var wire 2 # AC [1:0] $end
+$var reg 1 $ CLK $end
+$var reg 1 % D1 $end
+$var reg 1 & D2 $end
+$var reg 1 ' D3 $end
+$var reg 1 ( D4 $end
+$var reg 1 ) F1 $end
+$var reg 1 * F2 $end
+$var reg 1 + F3 $end
+$var reg 1 , F4 $end
+$var reg 1 - RESET $end
+$var reg 1 . S1 $end
+$var reg 1 / S2 $end
+$var reg 1 0 S3 $end
+$var reg 1 1 S4 $end
+$var reg 1 2 U1 $end
+$var reg 1 3 U2 $end
+$var reg 1 4 U3 $end
+$var reg 1 5 U4 $end
+$scope module elev $end
+$var wire 1 6 B1 $end
+$var wire 1 7 B2 $end
+$var wire 1 8 B3 $end
+$var wire 1 9 B4 $end
+$var wire 1 $ CLK $end
+$var wire 1 % D1 $end
+$var wire 1 & D2 $end
+$var wire 1 ' D3 $end
+$var wire 1 ( D4 $end
+$var wire 1 ) F1 $end
+$var wire 1 * F2 $end
+$var wire 1 + F3 $end
+$var wire 1 , F4 $end
+$var wire 1 : NA $end
+$var wire 1 ! Open $end
+$var wire 1 - RESET $end
+$var wire 1 . S1 $end
+$var wire 1 / S2 $end
+$var wire 1 0 S3 $end
+$var wire 1 1 S4 $end
+$var wire 1 2 U1 $end
+$var wire 1 3 U2 $end
+$var wire 1 4 U3 $end
+$var wire 1 5 U4 $end
+$var wire 1 ; U4_ $end
+$var wire 1 < U3_ $end
+$var wire 1 = U2_ $end
+$var wire 1 > U1_ $end
+$var wire 1 ? F4_ $end
+$var wire 1 @ F3_ $end
+$var wire 1 A F2_ $end
+$var wire 1 B F1_ $end
+$var wire 3 C DISP [2:0] $end
+$var wire 1 D D4_ $end
+$var wire 1 E D3_ $end
+$var wire 1 F D2_ $end
+$var wire 1 G D1_ $end
+$var wire 2 H AC [1:0] $end
+$var reg 1 I clrD1 $end
+$var reg 1 J clrD2 $end
+$var reg 1 K clrD3 $end
+$var reg 1 L clrD4 $end
+$var reg 1 M clrF1 $end
+$var reg 1 N clrF2 $end
+$var reg 1 O clrF3 $end
+$var reg 1 P clrF4 $end
+$var reg 1 Q clrU1 $end
+$var reg 1 R clrU2 $end
+$var reg 1 S clrU3 $end
+$var reg 1 T clrU4 $end
+$var reg 2 U counter [1:0] $end
+$var reg 3 V state [2:0] $end
+$scope module regD1 $end
+$var wire 1 I clr $end
+$var wire 1 % in $end
+$var reg 1 G out $end
+$upscope $end
+$scope module regD2 $end
+$var wire 1 J clr $end
+$var wire 1 & in $end
+$var reg 1 F out $end
+$upscope $end
+$scope module regD3 $end
+$var wire 1 K clr $end
+$var wire 1 ' in $end
+$var reg 1 E out $end
+$upscope $end
+$scope module regD4 $end
+$var wire 1 L clr $end
+$var wire 1 ( in $end
+$var reg 1 D out $end
+$upscope $end
+$scope module regF1 $end
+$var wire 1 M clr $end
+$var wire 1 ) in $end
+$var reg 1 B out $end
+$upscope $end
+$scope module regF2 $end
+$var wire 1 N clr $end
+$var wire 1 * in $end
+$var reg 1 A out $end
+$upscope $end
+$scope module regF3 $end
+$var wire 1 O clr $end
+$var wire 1 + in $end
+$var reg 1 @ out $end
+$upscope $end
+$scope module regF4 $end
+$var wire 1 P clr $end
+$var wire 1 , in $end
+$var reg 1 ? out $end
+$upscope $end
+$scope module regU1 $end
+$var wire 1 Q clr $end
+$var wire 1 2 in $end
+$var reg 1 > out $end
+$upscope $end
+$scope module regU2 $end
+$var wire 1 R clr $end
+$var wire 1 3 in $end
+$var reg 1 = out $end
+$upscope $end
+$scope module regU3 $end
+$var wire 1 S clr $end
+$var wire 1 4 in $end
+$var reg 1 < out $end
+$upscope $end
+$scope module regU4 $end
+$var wire 1 T clr $end
+$var wire 1 5 in $end
+$var reg 1 ; out $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b10 V
+b0 U
+0T
+0S
+0R
+0Q
+0P
+0O
+0N
+0M
+0L
+0K
+0J
+0I
+b10 H
+0G
+0F
+0E
+0D
+b1 C
+0B
+0A
+0@
+0?
+0>
+0=
+0<
+0;
+1:
+09
+08
+07
+06
+05
+04
+03
+02
+01
+00
+0/
+1.
+1-
+0,
+0+
+0*
+0)
+0(
+0'
+0&
+0%
+0$
+b10 #
+b1 "
+0!
+$end
+#5
+1$
+#10
+0$
+#15
+1$
+#20
+0$
+#25
+1$
+#30
+0$
+#35
+1$
+#40
+0$
+#45
+1$
+#50
+0$
+#55
+1$
+#60
+0$
+#65
+1$
+#70
+0$
+#75
+1$
+#80
+0$
+#85
+1$
+#90
+0$
+#95
+1$
+#100
+0:
+16
+1>
+0$
+12
+#105
+1!
+b100 V
+1$
+#110
+0$
+#115
+b1 U
+1$
+#120
+0$
+#125
+b10 U
+1$
+#130
+0$
+#135
+0!
+b10 V
+1:
+06
+0>
+1M
+1Q
+1I
+b11 U
+1$
+#140
+0$
+#145
+b0 U
+0:
+16
+1>
+0M
+0Q
+0I
+1$
+#150
+0$
+#155
+1!
+b100 V
+1$
+#160
+0$
+#165
+b1 U
+1$
+#170
+0$
+#175
+b10 U
+1$
+#180
+0$
+#185
+0!
+b10 V
+1:
+06
+0>
+1M
+1Q
+1I
+b11 U
+1$
+#190
+0$
+#195
+b0 U
+0:
+16
+1>
+0M
+0Q
+0I
+1$
+#200
+19
+1?
+0$
+1,
+02
+#205
+1!
+b100 V
+1$
+#210
+0$
+#215
+b1 U
+1$
+#220
+0$
+#225
+b10 U
+1$
+#230
+0$
+#235
+0!
+b10 V
+06
+0>
+1M
+1Q
+1I
+b11 U
+1$
+#240
+0$
+#245
+b0 #
+b0 H
+b0 V
+b0 U
+0M
+0Q
+0I
+1$
+#250
+0$
+#255
+1$
+#260
+0$
+#265
+1$
+#270
+0$
+#275
+1$
+#280
+0$
+#285
+1$
+#290
+0$
+#295
+1$
+#300
+18
+b10 "
+b10 C
+1<
+0$
+14
+1/
+0.
+0,
+#305
+1$
+#310
+0$
+#315
+1$
+#320
+0$
+#325
+1$
+#330
+0$
+#335
+1$
+#340
+0$
+#345
+1$
+#350
+0$
+#355
+1$
+#360
+0$
+#365
+1$
+#370
+0$
+#375
+1$
+#380
+0$
+#385
+1$
+#390
+0$
+#395
+1$
+#400
+b11 "
+b11 C
+17
+1F
+0$
+1&
+10
+0/
+04
+#405
+b10 #
+b10 H
+b10 V
+1$
+#410
+0$
+#415
+1!
+b100 V
+1$
+#420
+0$
+#425
+b1 U
+1$
+#430
+0$
+#435
+b10 U
+1$
+#440
+0$
+#445
+0!
+b10 V
+08
+0<
+1O
+1S
+1K
+b11 U
+1$
+#450
+0$
+#455
+b0 #
+b0 H
+b0 V
+b0 U
+0O
+0S
+0K
+1$
+#460
+0$
+#465
+1$
+#470
+0$
+#475
+1$
+#480
+0$
+#485
+1$
+#490
+0$
+#495
+1$
+#500
+b100 "
+b100 C
+18
+1<
+0$
+14
+11
+00
+0&
+#505
+b10 #
+b10 H
+b11 V
+1$
+#510
+0$
+#515
+1!
+b101 V
+1$
+#520
+0$
+#525
+b1 U
+1$
+#530
+0$
+#535
+b10 U
+1$
+#540
+0$
+#545
+0!
+b11 V
+09
+0?
+1P
+1T
+1L
+b11 U
+1$
+#550
+0$
+#555
+b1 #
+b1 H
+b1 V
+b0 U
+0P
+0T
+0L
+1$
+#560
+0$
+#565
+1$
+#570
+0$
+#575
+1$
+#580
+0$
+#585
+1$
+#590
+0$
+#595
+1$
+#600
+b11 "
+b11 C
+16
+1B
+0$
+1)
+10
+01
+04
+#605
+1$
+#610
+0$
+#615
+1$
+#620
+0$
+#625
+1$
+#630
+0$
+#635
+1$
+#640
+0$
+#645
+1$
+#650
+0$
+#655
+1$
+#660
+0$
+#665
+1$
+#670
+0$
+#675
+1$
+#680
+0$
+#685
+1$
+#690
+0$
+#695
+1$
+#700
+b10 "
+b10 C
+0$
+1/
+00
+0)
+#705
+b10 #
+b10 H
+b11 V
+1$
+#710
+0$
+#715
+1!
+b101 V
+1$
+#720
+0$
+#725
+b1 U
+1$
+#730
+0$
+#735
+b10 U
+1$
+#740
+0$
+#745
+0!
+b11 V
+07
+0F
+1N
+1R
+1J
+b11 U
+1$
+#750
+0$
+#755
+b1 #
+b1 H
+b1 V
+b0 U
+0N
+0R
+0J
+1$
+#760
+0$
+#765
+1$
+#770
+0$
+#775
+1$
+#780
+0$
+#785
+1$
+#790
+0$
+#795
+1$
+#800
+b1 "
+b1 C
+0$
+14
+1.
+0/
+#805
+b10 #
+b10 H
+b10 V
+1$
+#810
+0$
+#815
+1!
+b100 V
+1$
+#820
+0$
+#825
+b1 U
+1$
+#830
+0$
+#835
+b10 U
+1$
+#840
+0$
+#845
+0!
+b10 V
+06
+0B
+1M
+1Q
+1I
+b11 U
+1$
+#850
+0$
+#855
+b0 #
+b0 H
+b0 V
+b0 U
+0M
+0Q
+0I
+1$
+#860
+0$
+#865
+1$
+#870
+0$
+#875
+1$
+#880
+0$
+#885
+1$
+#890
+0$
+#895
+1$
+#900
+1:
+08
+b10 #
+b10 H
+0<
+b10 V
+1I
+1J
+1K
+1L
+1Q
+1R
+1S
+1T
+1M
+1N
+1O
+1P
+0$
+0-
+#905
+1$
+#910
+0$
+#915
+1$
+#920
+0$
+#925
+1$
+#930
+0$
+#935
+1$
+#940
+0$
+#945
+1$
+#950
+0$
+#955
+1$
+#960
+0$
+#965
+1$
+#970
+0$
+#975
+1$
+#980
+0$
+#985
+1$
+#990
+0$
+#995
+1$
+#1000
+0$
