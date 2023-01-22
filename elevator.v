@@ -36,12 +36,12 @@ register regD2(.in(D2), .clr(clrD2), .out(D2_));
 register regD3(.in(D3), .clr(clrD3), .out(D3_));
 register regD4(.in(D4), .clr(clrD4), .out(D4_));
 
-wire B1, B2, B3, B4, NA;
+wire B1, B2, B3, B4, NB;
 assign B1 = F1_ | U1_ | D1_;
 assign B2 = F2_ | U2_ | D2_;
 assign B3 = F3_ | U3_ | D3_;
 assign B4 = F4_ | U4_ | D4_;
-assign NA = ~(B1 | B2 | B3 | B4);
+assign NB = ~(B1 | B2 | B3 | B4);
 
 assign DISP = (S1 == 1) ? 1 : ((S2 == 1) ? 2 : ((S3 == 1) ? 3 : 4));
 assign AC = (state > 2) ? 2 : state;
@@ -72,7 +72,7 @@ always @(posedge CLK or negedge RESET) begin
     end
     else begin
         case (state) 
-            0: begin  //up
+            0: begin  //Up
                 if ((S2 && (!F2_ && !U2_ && (B3 || B4))) ||
                     (S3 && (!F3_ && !U3_ && B4)))
                     state <= 0;
@@ -84,7 +84,7 @@ always @(posedge CLK or negedge RESET) begin
                 else if (S4 && (B4))
                     state <= 3;
             end
-            1: begin  //down
+            1: begin  //Down
                 if ((S3 && (!F3_ && !D3_ && (B1 || B2))) ||
                     (S2 && (!F2_ && !D2_ && B1)))
                     state <= 1;
@@ -96,15 +96,14 @@ always @(posedge CLK or negedge RESET) begin
                 else if (S1 && (B1))
                     state <= 2;
             end
-            2: begin  //stopu
+            2: begin  //Stop U
                 {clrF1, clrU1, clrD1} = 3'b000;
                 {clrF2, clrU2, clrD2} = 3'b000;
                 {clrF3, clrU3, clrD3} = 3'b000;
-                if (NA)
+                if (NB)
                     state <= 2;
                 
-                else if ((S1 && B1) || (S2 && B2) ||
-                        (S3 && B3) || (S4 && B4))
+                else if ((S1 && B1) || (S2 && B2) || (S3 && B3))
                     state <= 4;
 
                 else if ((S2 && !B2 && !B3 && !B4 && (B1)) || 
@@ -116,16 +115,15 @@ always @(posedge CLK or negedge RESET) begin
                         (S3 && !B3 && (B4)))
                     state <= 0;
             end
-            3: begin  //stopd
+            3: begin  //Stop D
                 {clrF2, clrU2, clrD2} = 3'b000;
                 {clrF3, clrU3, clrD3} = 3'b000;
                 {clrF4, clrU4, clrD4} = 3'b000;
 
-                if (NA)
+                if (NB)
                     state <= 3;
 
-                else if ((S1 && B1) || (S2 && B2) ||
-                        (S3 && B3) || (S4 && B4))
+                else if ((S2 && B2) || (S3 && B3) || (S4 && B4))
                     state <= 5;
 
                 else if ((S2 && !B2 && !B1 && (B3 || B4)) ||
@@ -137,7 +135,7 @@ always @(posedge CLK or negedge RESET) begin
                         (S4 && !B4 && (B1 || B2 || B3)))
                     state <= 1;
             end
-            4: begin //stopu door
+            4: begin //Stop U door
                 wait(counter == 3)
 
                 if (S1)
@@ -149,7 +147,7 @@ always @(posedge CLK or negedge RESET) begin
 
                 state <= 2;
             end
-            5: begin //stopd door
+            5: begin //Stop D door
                 wait(counter == 3)
 
                 if (S2)
