@@ -14,6 +14,7 @@ module elevator (
 reg [1:0] counter;
 reg [2:0] state;
 
+// request handling registers
 wire F1_, F2_, F3_, F4_;
 wire U1_, U2_, U3_, U4_;
 wire D1_, D2_, D3_, D4_;
@@ -35,17 +36,22 @@ register regD1(.in(D1), .clr(clrD1), .out(D1_));
 register regD2(.in(D2), .clr(clrD2), .out(D2_));
 register regD3(.in(D3), .clr(clrD3), .out(D3_));
 register regD4(.in(D4), .clr(clrD4), .out(D4_));
+// request handling registers
 
+// each floor button
 wire B1, B2, B3, B4, NB;
 assign B1 = F1_ | U1_ | D1_;
 assign B2 = F2_ | U2_ | D2_;
 assign B3 = F3_ | U3_ | D3_;
 assign B4 = F4_ | U4_ | D4_;
 assign NB = ~(B1 | B2 | B3 | B4);
+// each floor button
 
+// output
 assign DISP = (S1 == 1) ? 1 : ((S2 == 1) ? 2 : ((S3 == 1) ? 3 : 4));
 assign AC = (state > 2) ? 2 : state;
 assign Open = (state == 4 || state == 5);
+// output
 
 initial begin
     clrF1 <= 0; clrF2 <= 0; clrF3 <= 0; clrF4 <= 0;
