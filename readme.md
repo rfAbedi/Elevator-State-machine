@@ -45,7 +45,7 @@ assign B3 = F3_ | U3_ | D3_;
 assign B4 = F4_ | U4_ | D4_;
 assign NB = ~(B1 | B2 | B3 | B4);
 ```
-`B1`-`B4` is activated if there isn't any request to the floor. `NB` is activated if there is no request at all.
+`B1`-`B4` is activated if there is any request to the floor. `NB` is activated if there is no request at all.
 
 ### State Machine
 
@@ -58,8 +58,8 @@ assign NB = ~(B1 | B2 | B3 | B4);
   - `1: down`
   - `2: stop`
 - `Open`
-  - `0: close door`
-  - `1: open door`
+  - `0: close`
+  - `1: open`
 
 ### Time Handling
   
